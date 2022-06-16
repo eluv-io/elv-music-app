@@ -17,31 +17,48 @@
   }
 }
 
-html,
-body {
-  color: $elv-color-text-black;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+pre {
+  white-space: pre-wrap;
+}
 
-  * {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-  }
+body {
+  -webkit-overflow-scrolling: touch;
+  background-color: $elv-color-bg-black;
+  box-sizing: border-box;
+  color: $elv-color-text-white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  overflow-y: scroll;
+  position: absolute;
+  transition: background-color 1000ms linear;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+body,
+.app,
+.app-container,
+.page-container,
+.header,
+.navigation {
+  transition: background-color 1s, color 0.5s, border 0.5s, box-shadow 0.5s !important;
 }
 
 html,
 body,
 .app,
-.app-container {
-  background-color: $elv-color-bg-white;
+.app-container,
+.page-container {
+  background-color: $elv-color-bg-black;
+  color: $elv-color-white;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  height: 100%;
   max-width: 100%;
+  min-height: 100%;
+  overscroll-behavior-y: none; // sass-lint:disable-line no-misspelled-properties
   width: 100%;
-}
-
-.app-container {
-  flex-direction: row;
+  z-index: 1;
 }

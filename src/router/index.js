@@ -1,16 +1,16 @@
 import React from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
 
-import GettingStarted from "Components/GettingStarted";
-import Components from "Components/Components";
-import Fabric from "Components/Fabric";
+import Home from "Components/Home";
+import Library from "Components/Library";
+import Discover from "Components/Discover";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route exact={true} path="/" element={<GettingStarted />} />
-      <Route path="/fabric" element={<Fabric />} />
-      <Route path="/components" element={<Components />} />
+      <Route exact={true} path="/" element={<Home />} />
+      <Route path="/discover" element={<Discover />} />
+      <Route path="/library" element={<Library />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
