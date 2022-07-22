@@ -1,10 +1,9 @@
-# elv-starter-js
+# elv-music-app
 
-A project template for creating an Eluvio application using React, Mobx, elv-client-js, elv-media-wallet, and elv-components-js. 
 
 ### Prerequisites
 
-- Node.js version 16 or 18 (Node 17 has been reported to cause dependency issues)
+- Node.js version 16 or higher
 - NPM 8 or higher
 
 ### Getting Started

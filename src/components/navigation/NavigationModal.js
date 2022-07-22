@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {createPortal} from "react-dom";
-import CloseIcon from "Assets/icons/x.svg";
-import {ImageIcon} from "elv-components-js";
 
 const Modal = ({
   children,
@@ -41,13 +39,7 @@ const Modal = ({
         Toggle ?
           <div className="modal__header">
             <button className="modal__close-button">
-              <ImageIcon
-                key={"back-icon-Close Modal"}
-                className={"modal__close-icon"}
-                title={"Close Modal"}
-                icon={CloseIcon}
-                onClick={() => Close()}
-              />
+              X
             </button>
           </div> :
           null

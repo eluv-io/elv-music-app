@@ -4,12 +4,9 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  // entry: "./src/index.js",
   target: "web",
   output: {
     chunkFilename: "[name].[contenthash].bundle.js",
-    // filename: "[name].js",
-    // path: Path.resolve(__dirname, "dist")
   },
   devServer: {
     allowedHosts: "all",
@@ -35,7 +32,7 @@ module.exports = {
     }),
     new HTMLWebpackPlugin({
       template: Path.join(__dirname, "src", "index.html"),
-      title: "Eluvio Starter App",
+      title: "Eluvio Music App",
       cache: false,
       filename: "index.html",
       favicon: "./src/static/icons/favicon.png",
@@ -51,7 +48,9 @@ module.exports = {
       Components: Path.resolve(__dirname, "src/components")
     },
     fallback: {
-      fs: false
+      fs: false,
+      "stream": require.resolve("stream-browserify"),
+      "crypto": require.resolve("crypto-browserify")
     },
     extensions: [".js", ".jsx", ".scss", ".png", ".svg"]
   },
@@ -59,7 +58,6 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!elv-components-js)/,
         use: {
           loader: "babel-loader",
           options: {
